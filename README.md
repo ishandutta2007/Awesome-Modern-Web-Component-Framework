@@ -1,6 +1,6 @@
 # Awesome-Modern-Web-Component-Framework
 
-# Top Modern Web Component Framework Ecosystem
+## Top Modern Web Component Framework Ecosystem
 
 **Curated List of SaaS Products & Open-Source GitHub Projects**  
 *Focused on Component-Based UI Architecture, Reactive Rendering & Web Standards Interoperability*  
