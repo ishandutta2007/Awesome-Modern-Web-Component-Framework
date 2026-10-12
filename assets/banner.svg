@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0f1d" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#050811" />
+    </linearGradient>
+
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <style>
+      .bg-grid { stroke: rgba(255, 255, 255, 0.04); stroke-width: 1; }
+      .orbit-path { stroke: rgba(99, 102, 241, 0.18); stroke-dasharray: 4,4; fill: none; }
+      
+      @keyframes floatParticle {
+        0%, 100% { transform: translateY(0px) scale(1); opacity: 0.3; }
+        50% { transform: translateY(-16px) scale(1.2); opacity: 0.7; }
+      }
+      @keyframes pulseGlow {
+        0%, 100% { opacity: 0.25; transform: scale(1); }
+        50% { opacity: 0.55; transform: scale(1.1); }
+      }
+      @keyframes orbitRotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+      @keyframes badgeDrift {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-6px); }
+      }
+
+      .particle-1 { animation: floatParticle 6s ease-in-out infinite; }
+      .particle-2 { animation: floatParticle 8s ease-in-out 1.5s infinite; }
+      .particle-3 { animation: floatParticle 7s ease-in-out 3s infinite; }
+      
+      .glow-orb-1 { animation: pulseGlow 8s ease-in-out infinite; transform-origin: 200px 100px; }
+      .glow-orb-2 { animation: pulseGlow 10s ease-in-out 2s infinite; transform-origin: 1000px 220px; }
+      
+      .orbit-group { animation: orbitRotate 30s linear infinite; transform-origin: 1020px 160px; }
+      .badge-anim-1 { animation: badgeDrift 5s ease-in-out infinite; }
+      .badge-anim-2 { animation: badgeDrift 6s ease-in-out 1s infinite; }
+      .badge-anim-3 { animation: badgeDrift 5.5s ease-in-out 2s infinite; }
+
+      .title {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 800;
+        font-size: 42px;
+        letter-spacing: -0.5px;
+        fill: url(#textGrad);
+      }
+      .subtitle {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-weight: 400;
+        font-size: 17px;
+        fill: #94a3b8;
+      }
+      .pill-text {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        fill: #e2e8f0;
+      }
+    </style>
+  </defs>
+
+  <!-- Deep Backdrop -->
+  <rect width="1200" height="320" rx="16" fill="url(#bgGrad)" />
+
+  <!-- Ambient background glow spots (strictly background, behind all text) -->
+  <circle class="glow-orb-1" cx="200" cy="100" r="140" fill="#38bdf8" filter="url(#glow)" opacity="0.15" />
+  <circle class="glow-orb-2" cx="1020" cy="160" r="180" fill="#818cf8" filter="url(#glow)" opacity="0.15" />
+
+  <!-- Technical Grid Pattern -->
+  <g class="bg-grid">
+    <line x1="0" y1="40" x2="1200" y2="40" />
+    <line x1="0" y1="80" x2="1200" y2="80" />
+    <line x1="0" y1="120" x2="1200" y2="120" />
+    <line x1="0" y1="160" x2="1200" y2="160" />
+    <line x1="0" y1="200" x2="1200" y2="200" />
+    <line x1="0" y1="240" x2="1200" y2="240" />
+    <line x1="0" y1="280" x2="1200" y2="280" />
+    <line x1="100" y1="0" x2="100" y2="320" />
+    <line x1="250" y1="0" x2="250" y2="320" />
+    <line x1="400" y1="0" x2="400" y2="320" />
+    <line x1="550" y1="0" x2="550" y2="320" />
+    <line x1="700" y1="0" x2="700" y2="320" />
+    <line x1="850" y1="0" x2="850" y2="320" />
+    <line x1="1000" y1="0" x2="1000" y2="320" />
+  </g>
+
+  <!-- Dynamic Geometric Orbit Elements (Right Side Decorative Canvas) -->
+  <g>
+    <circle cx="1020" cy="160" r="100" class="orbit-path" />
+    <circle cx="1020" cy="160" r="60" class="orbit-path" />
+    
+    <g class="orbit-group">
+      <!-- Orbiting node 1 -->
+      <circle cx="1020" cy="60" r="6" fill="#38bdf8" />
+      <circle cx="1020" cy="60" r="12" fill="#38bdf8" opacity="0.3" />
+      
+      <!-- Orbiting node 2 -->
+      <circle cx="1120" cy="160" r="8" fill="#a855f7" />
+      <circle cx="1120" cy="160" r="15" fill="#a855f7" opacity="0.3" />
+      
+      <!-- Orbiting node 3 -->
+      <circle cx="962" cy="160" r="5" fill="#34d399" />
+    </g>
+
+    <g class="orbit-group" style="animation-direction: reverse; animation-duration: 20s;">
+      <circle cx="1020" cy="100" r="5" fill="#f43f5e" />
+      <circle cx="1080" cy="160" r="4" fill="#fbbf24" />
+    </g>
+
+    <!-- Core component symbol in right canvas -->
+    <rect x="995" y="135" width="50" height="50" rx="10" fill="#1e293b" stroke="#6366f1" stroke-width="2" />
+    <path d="M1010 160 L1020 150 L1030 160 L1020 170 Z" fill="none" stroke="#38bdf8" stroke-width="2" />
+    <circle cx="1020" cy="160" r="2.5" fill="#c084fc" />
+  </g>
+
+  <!-- Floating Ambient Particles -->
+  <circle class="particle-1" cx="150" cy="60" r="3" fill="#38bdf8" />
+  <circle class="particle-2" cx="480" cy="70" r="4" fill="#818cf8" />
+  <circle class="particle-3" cx="720" cy="80" r="3" fill="#c084fc" />
+  <circle class="particle-1" cx="320" cy="270" r="2.5" fill="#34d399" />
+
+  <!-- Category Badge Pill at Top Left (Foreground) -->
+  <g class="badge-anim-1" transform="translate(60, 48)">
+    <rect width="275" height="30" rx="15" fill="rgba(30, 41, 59, 0.85)" stroke="rgba(56, 189, 248, 0.4)" stroke-width="1" />
+    <circle cx="15" cy="15" r="4" fill="#10b981" />
+    <text x="28" y="20" class="pill-text" fill="#38bdf8">⚡ CURATED ECOSYSTEM GUIDE</text>
+  </g>
+
+  <!-- Title & Subtitle (FOREGROUND: crisp, pristine, zero overlay) -->
+  <text x="60" y="130" class="title">Modern Web Component Framework</text>
+  <text x="60" y="168" class="subtitle">Curated directory of standards-compliant web components, reactive UI runtimes &amp; SaaS edge platforms.</text>
+
+  <!-- Interactive Decorative Feature Pills (Lower Foreground) -->
+  <g transform="translate(60, 215)">
+    <!-- Pill 1 -->
+    <g class="badge-anim-1">
+      <rect width="170" height="38" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1" />
+      <text x="20" y="24" class="pill-text">⚛️ Reactive Signals</text>
+    </g>
+    <!-- Pill 2 -->
+    <g class="badge-anim-2" transform="translate(182, 0)">
+      <rect width="210" height="38" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1" />
+      <text x="20" y="24" class="pill-text">🧩 Shadow DOM &amp; Custom Elements</text>
+    </g>
+    <!-- Pill 3 -->
+    <g class="badge-anim-3" transform="translate(404, 0)">
+      <rect width="180" height="38" rx="10" fill="#1e293b" stroke="#334155" stroke-width="1" />
+      <text x="20" y="24" class="pill-text">🚀 SSR &amp; Edge Islands</text>
+    </g>
+  </g>
+
+  <!-- Sleek Base Border Highlight -->
+  <rect x="0" y="316" width="1200" height="4" fill="url(#textGrad)" />
+</svg>
