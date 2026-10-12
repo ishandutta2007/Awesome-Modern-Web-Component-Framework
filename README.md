@@ -146,7 +146,7 @@ Curated list of leading open-source Web Component libraries, reactive UI framewo
 
 Popular open-source companion libraries, design systems, and build tools essential for developing modern web component architectures:
 
-| 🧰 Project | ⭐ Star Count | 📝 Category / Description |
+| 🧰 Project | ⭐ Stars_Count | 📝 Category / Description |
 |:---|:---|:---|
 | **[shadcn/ui](https://github.com/shadcn-ui/ui)** | [![Stars](https://img.shields.io/github/stars/shadcn-ui/ui?style=social&color=white)](https://github.com/shadcn-ui/ui/stargazers) | Beautifully designed, accessible copy-paste UI component architecture built on Radix UI and Tailwind CSS. |
 | **[Material UI (MUI)](https://github.com/mui/material-ui)** | [![Stars](https://img.shields.io/github/stars/mui/material-ui?style=social&color=white)](https://github.com/mui/material-ui/stargazers) | Comprehensive, production-ready React component library implementing Google's Material Design system. |
